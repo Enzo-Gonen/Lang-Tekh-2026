@@ -1,5 +1,5 @@
 #include<stdio.h>
 int main (){
-  printf("Ohayo Za Warudo!\n");
+  printf("HELLO WORLD!\n");
   return 0;
 }
