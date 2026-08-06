@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*Aprendendo sobre Linguagem C e suas mec‚nicas*/
+/*Aprendendo sobre Linguagem C e suas mec√¢nicas*/
 	/*"%f" = Float*/
 		/*"%/f" = Double*/
 			/*"%c" = Char*/
