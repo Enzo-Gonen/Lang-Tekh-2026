@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -37,12 +38,17 @@ int main(int argc, char *argv[]) {
 	float dis;
 	
 	printf("Insira o valor do par ordenado na forma (x1,y1): ");
-	scanf("%d %d", &x1, &y1);
+	scanf("%d", &x1);
+	scanf("%d", &y1);
+
+	printf("Insira o valor do par ordenado na forma (x1,y1): ");
+	scanf("%d", &x2);
+	scanf("%d", &y2);
 	
-	printf("\n\nLeitura: (%d,%d)", x1, y1);
+	p1 = pow(x2-x1,2);	
+	p2 = pow(y2-y1,2);	
 	
-	
-	
+	dist = sqrt()
 	
 	return 0;
 }
