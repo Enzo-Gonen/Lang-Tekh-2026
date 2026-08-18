@@ -37,9 +37,9 @@ int main(int argc, char *argv[]) {
 	float dis;
 	
 	printf("Insira o valor do par ordenado na forma (x1,y1): ");
-	scanf("%d %d", &x1, &x2);
+	scanf("%d %d", &x1, &y1);
 	
-	printf("\n\nLeitura: (%d,%d)", x1, x2);
+	printf("\n\nLeitura: (%d,%d)", x1, y1);
 	
 	
 	
