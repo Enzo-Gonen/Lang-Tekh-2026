@@ -10,16 +10,11 @@ void exercicio1() {
     printf("Insira a capacidade de cada mochila: ");
     scanf("%d", &capacidade);
 
-    if (capacidade <= 0) {
-        printf("Capacidade invalida.\n");
-        return;
-    }
-
     n_mochilas = qtd_itens / capacidade;
     resto = qtd_itens % capacidade;
-
-    printf("%d mochilas sao necessarias e sobram %d itens.\n",
-           n_mochilas, resto);
+// Só sei que analisando os códigos, noto que tudo não passa de mera interpretação....
+    printf("%d mochilas sao necessarias.\n", n_mochilas);
+    printf("Sobram %d itens apos preencher completamente as mochilas.\n", resto);
 }
 
 void exercicio2() {
@@ -48,10 +43,7 @@ void exercicio2() {
         printf("Consecutivos: %d e %d\n", n4, n5);
         encontrou = 1;
     }
-
-    if (!encontrou) {
-        printf("Nenhum numero consecutivo foi encontrado.\n");
-    }
+// Aqui eu entendi que primeiro declaro e depois faço o +1 para ver se ele é menor, acho que entendi.
 }
 
 void exercicio3() {
@@ -62,21 +54,16 @@ void exercicio3() {
 
     printf("Digite a altura (m): ");
     scanf("%f", &altura);
-
-    if (altura <= 0) {
-        printf("Altura invalida.\n");
-        return;
-    }
-
+    
     imc = peso / (altura * altura);
 
     printf("IMC: %.2f\n", imc);
-
+//Mais tranquilo, a fórmula é simples, fiquei preso na altura (Tinha que utilizar "." para poder dar certo, sou "normal".
     if (imc < 18.5) {
         printf("Classificacao: Abaixo do peso\n");
-    } else if (imc <= 24.9) {
+    } else if (imc < 25.0) {
         printf("Classificacao: Normal\n");
-    } else if (imc <= 29.9) {
+    } else if (imc < 30.0) {
         printf("Classificacao: Acima do peso\n");
     } else {
         printf("Classificacao: Obeso\n");
@@ -115,6 +102,7 @@ void exercicio4() {
     A -= 1;
     C += 1;
     printf("7. Disco 1: A -> C | A = %d, B = %d, C = %d\n", A, B, C);
+// Mais demorado do que difícil, é um copia e cola com alteração do seguinte. Maldita torre...
 }
 
 void exercicio5() {
@@ -150,6 +138,7 @@ void exercicio5() {
 
     if (n4 % 5 == 0)
         printf("%d\n", n4);
+// Essa eu preciso tirar dúvida, mas já está no final da aula... Nem consta...
 }
 
 void exercicio6() {
@@ -207,9 +196,8 @@ void exercicio6() {
             resultado = valor * 1.609;
             printf("Resultado: %.2f km/h\n", resultado);
             break;
+// Essa é extensa, foi um copia e cola também, porém um pouco mais complexo... Também precisaria tirar dúvida...
 
-        default:
-            printf("Erro: codigo de unidade invalido!\n");
     }
 }
 
@@ -219,29 +207,26 @@ void exercicio7() {
     printf("Digite tres numeros inteiros: ");
     scanf("%d %d %d", &a, &b, &c);
 
-    if (a == b || a == c || b == c) {
-        printf("Os numeros tem que ser distintos.\n");
-    } else {
-        if (a > b) {
-            temp = a;
-            a = b;
-            b = temp;
-        }
 
-        if (a > c) {
-            temp = a;
-            a = c;
-            c = temp;
-        }
-
-        if (b > c) {
-            temp = b;
-            b = c;
-            c = temp;
-        }
-
-        printf("%d %d %d\n", a, b, c);
+    if (a > b) {
+        temp = a;
+        a = b;
+        b = temp;
     }
+
+    if (a > c) {
+        temp = a;
+        a = c;
+        c = temp;
+    }
+
+    if (b > c) {
+        temp = b;
+        b = c;
+        c = temp;
+    }
+// Isso eu sei, lembrei dos celulares, precisa de um extra para armazenar e ter a troca de valores.
+    printf("Ordem crescente: %d %d %d\n", a, b, c);
 }
 
 void exercicio8() {
@@ -254,47 +239,37 @@ void exercicio8() {
     printf("Digite o segundo valor: ");
     scanf("%f", &valor2);
 
-    printf("Digite o codigo da operacao (1 a 4): ");
+    printf("Digite o codigo da operacao:\n");
+    printf("1 - Maior que\n");
+    printf("2 - Menor que\n");
+    printf("3 - Igual\n");
+    printf("4 - Diferente\n");
+    printf("Codigo: ");
     scanf("%d", &codigo);
 
     switch (codigo) {
         case 1:
-            if (valor1 > valor2)
-                printf("Verdadeiro\n");
-            else
-                printf("Falso\n");
+            printf("%s\n", valor1 > valor2 ? "Verdadeiro" : "Falso");
             break;
 
         case 2:
-            if (valor1 < valor2)
-                printf("Verdadeiro\n");
-            else
-                printf("Falso\n");
+            printf("%s\n", valor1 < valor2 ? "Verdadeiro" : "Falso");
             break;
 
         case 3:
-            if (valor1 == valor2)
-                printf("Verdadeiro\n");
-            else
-                printf("Falso\n");
+            printf("%s\n", valor1 == valor2 ? "Verdadeiro" : "Falso");
             break;
 
         case 4:
-            if (valor1 != valor2)
-                printf("Verdadeiro\n");
-            else
-                printf("Falso\n");
+            printf("%s\n", valor1 != valor2 ? "Verdadeiro" : "Falso");
             break;
-
-        default:
-            printf("Operador invalido\n");
     }
+// Mais tranquilo
 }
 
 int main() {
     int opcao;
 
-    do {
         printf("\n========== MENU ==========\n");
         printf("1 - Mochilas\n");
         printf("2 - Numeros consecutivos\n");
@@ -352,8 +327,6 @@ int main() {
             default:
                 printf("Opcao invalida.\n");
         }
-
-    } while (opcao != 0);
 
     return 0;
 }
