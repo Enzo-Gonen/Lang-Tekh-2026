@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Aula boa
+int comp_maior (int a, int b){
+	if(a>b)return a;
+	else return b;
+}
+
+int main(int argc, char *argv[]) {
+	int valor[10];
+	int i;
+	
+	printf("Leia os números: ");
+	//Inicial-Condição-Incremento
+	for(i=0; i<10; i++){
+		scanf("%d", &valor[i]);
+	}
+	for(i=9; i>0; i--){
+		printf("|%d|", valor[i]);
+	}
+	
+	
+	return 0;
+}
