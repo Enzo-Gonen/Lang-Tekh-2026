@@ -8,18 +8,31 @@ int comp_maior (int a, int b){
 }
 
 int main(int argc, char *argv[]) {
-	int valor[10];
-	int i;
+	int valores[10];
+	int i, maior, menor;
 	
-	printf("Leia os números: ");
+	printf("Leia os números: \n");
 	//Inicial-Condição-Incremento
 	for(i=0; i<10; i++){
-		scanf("%d", &valor[i]);
-	}
-	for(i=9; i>0; i--){
-		printf("|%d|", valor[i]);
+		scanf("%d", &valores[i]);
 	}
 	
+	for(i=1, maior=valores[0]; i<5; i=i+2){
+		int comp_temp = comp_maior(valores[i],valores[i+1]);
+		maior = comp_temp(maior, comp_temp);
+	}
+	
+	print("\n");
+	for(i=9; i>0; i--){
+		printf("|%d|", valores[i]);
+	}
+	
+	for(i=0; i<5; i++);
+		if(valores[i]>valores[i+1]){
+			maior = valores[0];
+		}else{
+			maior = valores[1];
+	}
 	
 	return 0;
 }
